@@ -74,10 +74,11 @@ WSGI_APPLICATION = "CopySync.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {{
-    "default": dj_database_url.config(
-        default='postgres://copysync_user:hv9XoQtB0t6wAjx3D5ncQsulHE24J2E5@dpg-corhpjq1hbls73f5sj3g-a/copysync',
-        conn_max_age=600    )}
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
 
 
