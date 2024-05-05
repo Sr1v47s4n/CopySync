@@ -6,6 +6,7 @@ CopySync is a web application for securely storing and sharing text snippets. It
 
 - **Create and Share Text Snippets:** Users can create text snippets with a unique URL to share them with others.
 - **Anonymity** Users can create text snippets anonymously without the need to log in.
+-  **Private Pastes:** Users can mark their text snippets as private, ensuring only they can access them.
 - **Authentication:** Users can log in to manage their text snippets.
 - **Automatic Expiration:** Text snippets will automatically expire within 24 hours, providing added privacy and security.
 
