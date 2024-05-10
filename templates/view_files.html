@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Paste</title>
+    <title>View file</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -19,7 +19,7 @@
                         <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/view">View Pastes</a>
+                        <a class="nav-link" href="/view">View files</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/view_files">View Files</a>
@@ -41,18 +41,18 @@
     </nav>
 
     <div class="container mt-5">
-        <h1 class="mb-4">View Your Pastes</h1>
+        <h1 class="mb-4">View Your files</h1>
         <div class="row">
-            {% for paste in pastes %}
+            {% for file in files %}
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Paste Content</h5>
-                            <p class="card-text">{{ paste.content }}</p>
-                            <p class="card-text"><small class="text-muted">Type: {{ paste.type }}</small></p>
-                            <p class="card-text"><small class="text-muted">Created At: {{ paste.created_at }}</small></p>
-                            <p class="card-text"><small class="text-muted">Expiration Date: {{ paste.expiration_date }}</small></p>
-                            <a href="{% url 'delete_paste' paste.url %}" class="btn btn-danger">Delete</a>
+                            <h5 class="card-title">File Content</h5>
+                            <p class="card-text"><a href="{{ file.content.url }}" download target="_blank">{{ file.content.name }}</a></p>
+                            <p class="card-text"><small class="text-muted">Type: {{ file.type }}</small></p>
+                            <p class="card-text"><small class="text-muted">Created At: {{ file.created_at }}</small></p>
+                            <p class="card-text"><small class="text-muted">Expiration Date: {{ file.expiration_date }}</small></p>
+                            <a href="{% url 'delete_file' file.url %}" class="btn btn-danger">Delete</a>
                         </div>
                     </div>
                 </div>

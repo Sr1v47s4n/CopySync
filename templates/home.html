@@ -29,6 +29,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="view">View Pastes</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/view_files">View Files</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav">
                     {% if request.user.is_authenticated %}
@@ -65,6 +68,7 @@
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Create Paste</button>
+                <a href="/file" class="btn btn-secondary">Upload File</a>
             </form>
         {% else %}
             <form method="post">
@@ -74,6 +78,8 @@
                     <textarea class="form-control" id="content" name="content" rows="4"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Create Paste</button>
+                                <a href="/file" class="btn btn-secondary">Upload File</a>
+
             </form>
         {% endif %}
     </div>
