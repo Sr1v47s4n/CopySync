@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View file</title>
+    <title>About CopySync</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -19,7 +19,7 @@
                         <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/view">View files</a>
+                        <a class="nav-link" href="/view">View Pastes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/view_files">View Files</a>
@@ -44,33 +44,19 @@
     </nav>
 
     <div class="container mt-5">
-        <h1 class="mb-4">View Your files</h1>
-        <div class="row">
-            {% for file in files %}
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">File Content</h5>
-                            <p class="card-text"><a href="{{ file.content.url }}" download target="_blank">{{ file.content.name }}</a></p>
-                            <p class="card-text"><small class="text-muted">Type: {{ file.type }}</small></p>
-                            <p class="card-text"><small class="text-muted">Created At: {{ file.created_at }}</small></p>
-                            <p class="card-text"><small class="text-muted">Expiration Date: {{ file.expiration_date }}</small></p>
-                            <a href="{% url 'delete_file' file.url %}" class="btn btn-danger">Delete</a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-    <div class="notification">
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-info alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            {% endfor %}
-        {% endif %}
+        <h1 class="mb-4">About CopySync</h1>
+        <p>CopySync is a web application that enables users to securely store and share text snippets and files. It offers a range of features designed to streamline information sharing while prioritizing user privacy and data security.</p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+            <li>Create and Share Text Snippets: Users can create text snippets with a unique URL to easily share them with others. Text snippets automatically expire after 24 hours.</li>
+            <li>Upload and Share Files: CopySync allows users to upload files of up to 20MB in size and securely share them with others. Files uploaded to CopySync automatically expire after 6 hours.</li>
+            <li>Automatic Expiration: Text snippets and files uploaded to CopySync have expiration times to enhance privacy and security by ensuring that shared content is temporary.</li>
+            <li>User Authentication: Users can log in to CopySync to manage their text snippets and files, ensuring that only authorized users can access and edit their content.</li>
+            <li>Private Paste and File: CopySync supports the creation of private text snippets and the upload of private files, ensuring that sensitive information remains accessible only to authorized users.</li>
+        </ul>
+        <p>CopySync aims to provide a simple and intuitive platform for sharing information securely, whether it's text snippets for code sharing or files for collaborative projects. By implementing features such as automatic expiration and user authentication, CopySync prioritizes user privacy and data security.</p>
+        <p><strong>Expiration Time:</strong> Text snippets uploaded to CopySync automatically expire after 24 hours, while files uploaded to CopySync expire after 6 hours. This ensures that shared content is temporary and enhances privacy and security.</p>
+        <p><strong>File Size Limit:</strong> The maximum file size that can be shared on CopySync is 20MB, allowing users to share a wide range of files while ensuring optimal performance and usability.</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

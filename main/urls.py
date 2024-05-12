@@ -6,6 +6,7 @@ urlpatterns = [
     path("login/", views.login_user, name="login"),
     path("logout/", views.logout_user, name="logout"),
     path("register/", views.register_user, name="register"),
+    path("about/", views.about, name="about"),
     path("file/", views.file, name="file"),
     path("view_files/", views.view_files, name="view_files"),
     path("view_file/<str:url>", views.view_file, name="view_file"),
